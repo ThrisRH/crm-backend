@@ -2,6 +2,7 @@ package setting
 
 type Config struct {
 	Postgre PostgreSetting `mapstructure:"postgre"`
+	Logger  LoggerSetting  `mapstructure:"logger"`
 }
 
 type PostgreSetting struct {
@@ -13,4 +14,14 @@ type PostgreSetting struct {
 	MaxIdleConns    int    `mapstructure:"maxIdleConns"`
 	MaxOpenConns    int    `mapstructure:"maxOpenConns"`
 	ConnMaxLifeTime int    `mapstructure:"connMaxLifeTime"`
+}
+
+type LoggerSetting struct {
+	LogLevel    string `mapstructure:"logLevel"`
+	FileLogName string `mapstructure:"fileLogName"`
+	FileName    string `mapstructure:"fileName"`
+	MaxBackups  int    `mapstructure:"maxBackups"`
+	MaxSize     int    `mapstructure:"log_level"`
+	MaxAge      int    `mapstructure:"log_level"`
+	Compress    bool   `mapstructure:"log_level"`
 }

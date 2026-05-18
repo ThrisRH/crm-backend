@@ -9,3 +9,11 @@ postgre:
   maxIdleConns: 10
   maxOpenConns: 100
   connMaxLifeTime: 3600
+logger:
+  logLevel: debug
+  fileLogName: "./storages/logs/dev.001.log"
+  fileName:   "./storages/logs/dev.xxx.log"
+  maxSize:    500
+  maxBackups: 3
+  maxAge:     28
+  compress:   true
