@@ -1,17 +1,13 @@
-package main
+package init
 
 import (
 	"fmt"
+	"go-sea-crm/global"
 
 	"github.com/spf13/viper"
 )
 
-type Config struct {
-	Databases []struct {
-	} `mapstructure:"databases"`
-}
-
-func main() {
+func LoadConfig() {
 	viper := viper.New()
 	viper.AddConfigPath("./config/")
 	viper.SetConfigName("local")
@@ -26,8 +22,7 @@ func main() {
 	fmt.Println("Server Port::", viper.GetInt("server.port"))
 	fmt.Println("Security Key::", viper.GetString("security.jwt.key"))
 
-	var config Config
-	if err := viper.Unmarshal(&config); err != nil {
+	if err := viper.Unmarshal(&global.Config); err != nil {
 		fmt.Printf("Unable to decode configuration %v", err)
 	}
 }

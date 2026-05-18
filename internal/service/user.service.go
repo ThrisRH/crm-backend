@@ -14,5 +14,4 @@ func NewUserService() *UserService {
 
 func (us *UserService) GetUserInfoService() string {
 	return us.userRepo.GetUserInfoRepo()
-}	
-
+}

@@ -1,9 +1,8 @@
 package repo
 
+type UserRepo struct{}
 
-type UserRepo struct {}
-
-func NewUserRepo() *UserRepo{
+func NewUserRepo() *UserRepo {
 	return &UserRepo{}
 }
 
